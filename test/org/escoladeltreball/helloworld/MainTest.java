@@ -70,7 +70,7 @@ public class MainTest {
 	/**
 	 * Test method for {@link org.escoladeltreball.helloworld.Main#sum(int[])}.
 	 */
-	// @Ignore("El tractarem més tard")
+	 @Ignore("El tractarem més tard")
 	@Test
 	public final void testSum() {
 		fail("Not yet implemented"); // TODO
@@ -90,10 +90,11 @@ public class MainTest {
 	 * Test method for
 	 * {@link org.escoladeltreball.helloworld.Main#frequencyPercentage(int[], int)}.
 	 */
-	@Ignore("El tractarem més tard")
+	//@Ignore("El tractarem més tard")
 	@Test
 	public final void testFrequencyPercentage() {
-		fail("Not yet implemented"); // TODO
+		int[] values = {3, 4, 3, 5, 1, 2, 3, 0};
+		assertEquals(37.5, main.frequencyPercentage(values, 3), 1e-4);
 	}
 
 }

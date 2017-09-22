@@ -57,7 +57,19 @@ public final class Main implements Utils {
 
 	
 	public double frequencyPercentage(int[] values, int n) {
-		return ((double) frequency(values, n)) / values.length;
+		return ((double) frequency(values, n)) / values.length * 100;
+	}
+
+	@Override
+	public int[] merge(int[] values, int n) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isPresent(int[] values, int n) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 
