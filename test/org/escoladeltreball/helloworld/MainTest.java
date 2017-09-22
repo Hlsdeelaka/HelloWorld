@@ -25,7 +25,7 @@ public class MainTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		System.out.println("in setUpBeforeClass method");
+		//System.out.println("in setUpBeforeClass method");
 		main = new Main();
 	}
 
@@ -34,7 +34,7 @@ public class MainTest {
 	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		System.out.println("in tearDownAfterClass method");
+		//System.out.println("in tearDownAfterClass method");
 		main = null;
 	}
 
@@ -43,7 +43,7 @@ public class MainTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		System.out.println("in setUp method");
+		//System.out.println("in setUp method");
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class MainTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		System.out.println("in tearDown method");
+		//System.out.println("in tearDown method");
 	}
 
 	/**
@@ -95,6 +95,30 @@ public class MainTest {
 	public final void testFrequencyPercentage() {
 		int[] values = {3, 4, 3, 5, 1, 2, 3, 0};
 		assertEquals(37.5, main.frequencyPercentage(values, 3), 1e-4);
+	}
+	
+	@Test
+	public final void testMerge() {
+		int[] values = {1, 2, 3, 5, 7, 9, 11, 15};
+		int[] values2 = {1, 1, 1, 1, 1, 1, 1, 1};
+		assertArrayEquals(
+				new int[] {0, 1, 2, 3, 5, 7, 9, 11, 15}, 
+				main.merge(values, 0));
+		assertArrayEquals(
+				new int[] {1, 2, 3, 5, 6, 7, 9, 11, 15}, 
+				main.merge(values, 6));
+		assertArrayEquals(
+				new int[] {1, 2, 3, 5, 7, 9, 11, 15, 19}, 
+				main.merge(values, 19));
+		assertArrayEquals(
+				new int[] {1, 1, 1, 1, 1, 1, 1, 1, 2}, 
+				main.merge(values2, 2));
+		assertArrayEquals(
+				new int[] {0, 1, 1, 1, 1, 1, 1, 1, 1}, 
+				main.merge(values2, 0));
+		assertArrayEquals(
+				new int[] {1, 1, 1, 1, 1, 1, 1, 1, 1}, 
+				main.merge(values2, 1));
 	}
 
 }

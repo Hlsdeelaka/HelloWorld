@@ -60,10 +60,23 @@ public final class Main implements Utils {
 		return ((double) frequency(values, n)) / values.length * 100;
 	}
 
+	/*
+	 * This method returns an integer array with n in its place
+	 * NOTE: values is an ordered array
+	 */
 	@Override
 	public int[] merge(int[] values, int n) {
-		// TODO Auto-generated method stub
-		return null;
+		int[] merged = new int[values.length + 1];
+		int i = 0;
+		while(i < values.length && values[i] <= n) {
+			merged[i] = values[i];
+			i++;
+		}
+		merged[i] = n;
+		for(; i < values.length; i++) {
+			merged[i + 1] = values[i]; 
+		}
+		return merged;
 	}
 
 	@Override
