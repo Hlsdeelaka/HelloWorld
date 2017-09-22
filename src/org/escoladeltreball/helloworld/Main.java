@@ -72,5 +72,35 @@ public final class Main implements Utils {
 		return false;
 	}
 
+	/*
+	 * This method returns an integer matrix with row 0 holding even numbers and row 1 holding odd numbers
+	 * NOTE: Don't waste space!!!
+	 */	
+	@Override
+	public int[][] split(int[] values) {
+		int[][] matrix = new int[2][]; 
+		int evenNumbersCounter = 0, oddNumbersCounter = 0;
+		int evenNumbersIndex = 0, oddNumbersIndex = 0;
+		for(int value: values) {
+			if (value % 2 == 0) {
+				evenNumbersCounter++;
+			}
+			else {
+				oddNumbersCounter++;
+			}
+		}
+		matrix[0] = new int[evenNumbersCounter];
+		matrix[1] = new int[oddNumbersCounter];
+		for(int value: values) {
+			if (value % 2 == 0) {
+				matrix[0][evenNumbersIndex++] = value;
+			}
+			else {
+				matrix[1][oddNumbersIndex++] = value;
+			}
+		}
+		return matrix;
+	}
+
 
 }

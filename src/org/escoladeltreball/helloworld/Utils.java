@@ -8,6 +8,12 @@ package org.escoladeltreball.helloworld;
  *
  */
 public interface Utils {
+	
+	/*
+	 * This method returns an integer matrix with row 0 holding even numbers and row 1 holding odd numbers
+	 * NOTE: Don't waste space!!!
+	 */	
+	public abstract int[][] split(int[] values);
 
 	/*
 	 * This method returns an integer array with n in its place
