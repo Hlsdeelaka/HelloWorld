@@ -13,10 +13,10 @@ public final class Main implements Utils {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//
-//		int[] v = { 2, 3, 4, 5, 3, 2, 1 };
-//		Main main = new Main();
-//		System.out.println(main.findSmallest(v));
+
+		int[] v = { 2, 3, 4, 5, 3, 2, 1 };
+		Main main = new Main();
+		System.out.print(main.findSmallest(v));
 	}
 
 	/*
